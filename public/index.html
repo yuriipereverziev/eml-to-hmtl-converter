@@ -5,13 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>EML Converter</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
-<body style="background: #efefef">
-<form style="padding: 50px; text-align: center" class="form" action="/public" method="post" enctype="multipart/form-data">
-    <input id="input-name" type="file" name="eml">
-    <button class="submit-btn">convert</button>
+<body>
+<form class="form" action="/public" method="post" enctype="multipart/form-data">
+
+
+<!--    <label class="input__file" for="field">Upload</label>-->
+<!--    <input class="input-name" id="field" type="file" name="eml" placeholder="Upload">-->
+
+    <label class="input-file">
+        <input type="file" name="file">
+        <span class="input-file-btn">Upload</span>
+    </label>
+
+    <button class="submit-btn">Convert</button>
 </form>
+
 <div id="output"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -58,6 +72,15 @@
             }
         });
     })
+
+    $('.input-file input[type=file]').on('change', function(){
+        $('.submit-btn').addClass('active')
+    });
+
+    $('.input-file').click(function() {
+        $('.input-file').removeClass('active')
+    });
+
 </script>
 </body>
 </html>

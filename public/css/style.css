@@ -1,0 +1,113 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    text-align: center;
+    border-bottom: 1px solid #1F2E62;
+}
+
+.input-name {
+    border: 2px solid #1F2E62;
+    border-radius: 40px;
+}
+
+
+.submit-btn {
+    position: relative;
+    background: transparent;
+    border: 2px solid #1F2E62;
+    border-radius: 40px;
+    color: #1F2E62;
+    text-align: right;
+    width: 100%;
+    font-size: 12px;
+    max-width: 100px;
+    font-weight: 600;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.submit-btn::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: url("../img/stars.svg");
+}
+
+.input-file {
+    position: relative;
+    display: inline-block;
+}
+.input-file span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: 12px;
+    vertical-align: middle;
+    color: rgb(255 255 255);
+    text-align: center;
+    border-radius: 40px;
+    background-color: #1F2E62;
+    padding: 9px 12px;
+    padding-left: 42px;
+    box-sizing: border-box;
+    margin: 0;
+    transition: background-color 0.2s;
+}
+
+.input-file span::before {
+    position: absolute;
+    content: '';
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 18px;
+    background: url("../img/folder.svg");
+    background-repeat: no-repeat;
+}
+
+
+.input-file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.active {
+    border: 2px solid #1dbb17;
+}
+
+/*!* Focus *!*/
+/*.input-file input[type=file]:focus + span {*/
+/*    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);*/
+/*}*/
+
+/*!* Hover/active *!*/
+/*.input-file:hover span {*/
+/*    background-color: #59be6e;*/
+/*}*/
+/*.input-file:active span {*/
+/*    background-color: #2E703A;*/
+/*}*/
+
+/*!* Disabled *!*/
+/*.input-file input[type=file]:disabled + span {*/
+/*    background-color: #eee;*/
+/*}*/

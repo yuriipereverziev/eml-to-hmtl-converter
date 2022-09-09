@@ -6,10 +6,15 @@ const multer = require('multer');
 const bodyParser = require('body-parser')
 const app = express();
 
+const PORT = process.env.PORT || 80
+
+// static files
 app.use(express.static('public/uploads'))
+app.use('/css', express.static(__dirname + '/public/css'))
+app.use('/img', express.static(__dirname + '/public/img'))
+
 app.use(bodyParser.urlencoded({extended: false}))
 
-const PORT = process.env.PORT || 80
 
 
 const storage = multer.diskStorage({

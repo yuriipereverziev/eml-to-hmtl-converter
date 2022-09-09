@@ -14,7 +14,7 @@
 
 <body>
 
-    <h1>EML Converter</h1>
+<h1>EML Converter</h1>
 <form class="form" action="/public" method="post" enctype="multipart/form-data">
 
     <label class="input-file">
@@ -25,7 +25,14 @@
     <button class="submit-btn">Convert</button>
 </form>
 
-<div id="output"></div>
+
+<div class="field-top hidden">From:&nbsp;<div id="output"></div></div>
+<br>
+<div class="field-top hidden">To:&nbsp;<div id="output1"></div></div>
+<br>
+
+<div id="output2"></div>
+
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script defer src="js/main.js"></script>

@@ -103,6 +103,21 @@ h1 {
     border: 2px solid #1dbb17;
 }
 
+.field-top {
+    text-align: center;
+    color: #1F2E62;
+}
+.field-top {
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
 /*!* Focus *!*/
 /*.input-file input[type=file]:focus + span {*/
 /*    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);*/

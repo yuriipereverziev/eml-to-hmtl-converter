@@ -9,7 +9,13 @@ form.addEventListener('submit', function (e) {
         contentType: false,
         processData: false,
         success: function success(data) {
-            $('#output').html(data);
+            $('#output').html(data.from.html);
+            $('#output1').html(data.to.html);
+            $('#output2').html(data.html);
+            // console.log(data)
+            console.log(data)
+
+
         },
         error: function error() {
             console.error("There was an error :(");
@@ -23,4 +29,5 @@ $('.input-file input[type=file]').on('change', function(){
 
 $('.submit-btn').click(function() {
     $(this).removeClass('active')
+    $('.field-top').removeClass('hidden')
 });

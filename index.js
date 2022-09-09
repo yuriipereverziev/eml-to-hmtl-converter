@@ -43,7 +43,7 @@ app.post('/convert', (request, response) => {
             new EmlParser(fs.createReadStream('public/uploads/' + fileName))
                 .parseEml()
                 .then(result => {
-                    response.send(result.html);
+                    response.send(result);
                 })
                 .catch(err => {
                     console.log(err);
@@ -51,7 +51,6 @@ app.post('/convert', (request, response) => {
         }
     })
 })
-
 
 app.listen(PORT, () => {
     console.log('app is listening')

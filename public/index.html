@@ -6,18 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EML Converter</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 <form class="form" action="/public" method="post" enctype="multipart/form-data">
-
-
-<!--    <label class="input__file" for="field">Upload</label>-->
-<!--    <input class="input-name" id="field" type="file" name="eml" placeholder="Upload">-->
-
     <label class="input-file">
         <input type="file" name="file">
         <span class="input-file-btn">Upload</span>
@@ -34,30 +29,6 @@
 
     form.addEventListener('submit', function (e) {
         e.preventDefault()
-
-        // const formData = new FormData()
-        // const fetchData = {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'text/html'
-        //     },
-        //     body: formData
-        // };
-        //
-        // fetch('/convert', fetchData)
-        //     .then((response) => {
-        //         if (!response.ok) {
-        //             throw Error(`is not ok: ` + response.status);
-        //         }
-        //         return response.text();
-        //     })
-        //     .then((response) => {
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
-
         $.ajax({
             url: "/convert",
             type: "post",

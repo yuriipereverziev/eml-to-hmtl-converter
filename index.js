@@ -9,6 +9,8 @@ const app = express();
 app.use(express.static('public/uploads'))
 app.use(bodyParser.urlencoded({extended: false}))
 
+const PORT = process.env.PORT || 80
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/uploads')
@@ -46,6 +48,6 @@ app.post('/convert', (request, response) => {
 })
 
 
-app.listen(8328, () => {
+app.listen(PORT, () => {
     console.log('app is listening')
 })

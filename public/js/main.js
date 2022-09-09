@@ -21,6 +21,6 @@ $('.input-file input[type=file]').on('change', function(){
     $('.submit-btn').addClass('active')
 });
 
-$('.input-file').click(function() {
-    $('.input-file').removeClass('active')
+$('.submit-btn').click(function() {
+    $(this).removeClass('active')
 });

@@ -51,7 +51,7 @@ h1 {
     left: 10px;
     width: 20px;
     height: 20px;
-    background: url("https://mail-converter.herokuapp.com/img/stars.svg");
+    background: url("../img/stars.svg");
 }
 
 .input-file {
@@ -85,7 +85,7 @@ h1 {
     transform: translateY(-50%);
     width: 20px;
     height: 18px;
-    background: url("https://mail-converter.herokuapp.com/img/folder.svg");
+    background: url("../img/folder.svg");
     background-repeat: no-repeat;
 }
 

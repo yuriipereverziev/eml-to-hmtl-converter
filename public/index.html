@@ -13,18 +13,20 @@
 
     <style>
         body {
+            background: #efefef;
             font-family: 'Open Sans', sans-serif;
         }
 
         .form {
             max-width: 300px;
             width: 100%;
-            margin: 0 auto;
+            margin: 0 auto 50px;
             display: flex;
             justify-content: space-around;
             padding: 50px;
             text-align: center;
             border-bottom: 1px solid #1F2E62;
+
         }
 
         .submit-btn {
@@ -106,8 +108,10 @@
 
 <body>
 <form class="form" action="/public" method="post" enctype="multipart/form-data">
+
     <label class="input-file">
-        <input type="file" name="file">
+<!--        <input class="input-name" id="input-name" type="file" name="eml">-->
+        <input type="file" name="eml">
         <span class="input-file-btn">Upload</span>
     </label>
 
@@ -144,7 +148,6 @@
     $('.input-file').click(function() {
         $('.input-file').removeClass('active')
     });
-
 </script>
 </body>
 </html>

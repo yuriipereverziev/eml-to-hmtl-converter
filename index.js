@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 80
 
 
 app.get('/', function(request, response){
-    response.sendFile('public/index.html');
+    response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 // const storage = multer.diskStorage({

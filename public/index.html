@@ -6,102 +6,102 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EML Converter</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://mail-converter.herokuapp.com/public/css/style.css">
     <link rel="preconnect" href="https://fonts.goog leapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            background: #efefef;
-            font-family: 'Open Sans', sans-serif;
-        }
+<!--    <style>-->
+<!--        body {-->
+<!--            background: #efefef;-->
+<!--            font-family: 'Open Sans', sans-serif;-->
+<!--        }-->
 
-        .form {
-            max-width: 300px;
-            width: 100%;
-            margin: 0 auto 50px;
-            display: flex;
-            justify-content: space-around;
-            padding: 50px;
-            text-align: center;
-            border-bottom: 1px solid #1F2E62;
+<!--        .form {-->
+<!--            max-width: 300px;-->
+<!--            width: 100%;-->
+<!--            margin: 0 auto 50px;-->
+<!--            display: flex;-->
+<!--            justify-content: space-around;-->
+<!--            padding: 50px;-->
+<!--            text-align: center;-->
+<!--            border-bottom: 1px solid #1F2E62;-->
 
-        }
+<!--        }-->
 
-        .submit-btn {
-            position: relative;
-            background: transparent;
-            border: 2px solid #1F2E62;
-            border-radius: 40px;
-            color: #1F2E62;
-            text-align: right;
-            width: 100%;
-            font-size: 12px;
-            max-width: 100px;
-            font-weight: 600;
-            padding: 9px 12px;
-            cursor: pointer;
-        }
+<!--        .submit-btn {-->
+<!--            position: relative;-->
+<!--            background: transparent;-->
+<!--            border: 2px solid #1F2E62;-->
+<!--            border-radius: 40px;-->
+<!--            color: #1F2E62;-->
+<!--            text-align: right;-->
+<!--            width: 100%;-->
+<!--            font-size: 12px;-->
+<!--            max-width: 100px;-->
+<!--            font-weight: 600;-->
+<!--            padding: 9px 12px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
 
-        .submit-btn::before {
-            position: absolute;
-            content: "";
-            top: 50%;
-            transform: translateY(-50%);
-            left: 10px;
-            width: 20px;
-            height: 20px;
-            background: url("public/img/stars.svg");
-        }
+<!--        .submit-btn::before {-->
+<!--            position: absolute;-->
+<!--            content: "";-->
+<!--            top: 50%;-->
+<!--            transform: translateY(-50%);-->
+<!--            left: 10px;-->
+<!--            width: 20px;-->
+<!--            height: 20px;-->
+<!--            background: url("public/img/stars.svg");-->
+<!--        }-->
 
-        .input-file {
-            position: relative;
-            display: inline-block;
-        }
-        .input-file span {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            outline: none;
-            text-decoration: none;
-            font-size: 12px;
-            vertical-align: middle;
-            color: rgb(255 255 255);
-            text-align: center;
-            border-radius: 40px;
-            background-color: #1F2E62;
-            padding: 9px 12px 9px 42px;
-            box-sizing: border-box;
-            margin: 0;
-            transition: background-color 0.2s;
-        }
+<!--        .input-file {-->
+<!--            position: relative;-->
+<!--            display: inline-block;-->
+<!--        }-->
+<!--        .input-file span {-->
+<!--            position: relative;-->
+<!--            display: inline-block;-->
+<!--            cursor: pointer;-->
+<!--            outline: none;-->
+<!--            text-decoration: none;-->
+<!--            font-size: 12px;-->
+<!--            vertical-align: middle;-->
+<!--            color: rgb(255 255 255);-->
+<!--            text-align: center;-->
+<!--            border-radius: 40px;-->
+<!--            background-color: #1F2E62;-->
+<!--            padding: 9px 12px 9px 42px;-->
+<!--            box-sizing: border-box;-->
+<!--            margin: 0;-->
+<!--            transition: background-color 0.2s;-->
+<!--        }-->
 
-        .input-file span::before {
-            position: absolute;
-            content: '';
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 18px;
-            background: url("img/folder.svg") no-repeat;
-        }
+<!--        .input-file span::before {-->
+<!--            position: absolute;-->
+<!--            content: '';-->
+<!--            left: 12px;-->
+<!--            top: 50%;-->
+<!--            transform: translateY(-50%);-->
+<!--            width: 20px;-->
+<!--            height: 18px;-->
+<!--            background: url("img/folder.svg") no-repeat;-->
+<!--        }-->
 
 
-        .input-file input[type=file] {
-            position: absolute;
-            z-index: -1;
-            opacity: 0;
-            display: block;
-            width: 0;
-            height: 0;
-        }
+<!--        .input-file input[type=file] {-->
+<!--            position: absolute;-->
+<!--            z-index: -1;-->
+<!--            opacity: 0;-->
+<!--            display: block;-->
+<!--            width: 0;-->
+<!--            height: 0;-->
+<!--        }-->
 
-        .active {
-            border: 2px solid #1dbb17;
-        }
-    </style>
+<!--        .active {-->
+<!--            border: 2px solid #1dbb17;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 
 

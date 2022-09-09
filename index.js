@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage}).single('eml');
 
-app.get('/', (request, response) => {
+app.get('/public', (request, response) => {
     response.sendFile(__dirname + '/index.html');
 })
 

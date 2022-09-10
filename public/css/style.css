@@ -70,6 +70,7 @@ h1 {
     text-align: center;
     border-radius: 40px;
     background-color: #1F2E62;
+    border: 1px solid #1F2E62;
     padding: 9px 12px;
     padding-left: 42px;
     box-sizing: border-box;

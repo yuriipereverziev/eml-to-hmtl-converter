@@ -18,7 +18,8 @@ form.addEventListener('submit', function (e) {
             console.log(data)
 
             if (success){
-                $('.field-top').removeClass('hidden')
+                $('.field-top').removeClass('hidden');
+                $('.submit-btn').attr('disabled', 'disabled')
             }
         },
         error: function error() {

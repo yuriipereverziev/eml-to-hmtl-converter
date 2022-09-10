@@ -182,4 +182,9 @@ h1 {
     display: none;
 }
 
+.emailBody {
+    max-width: 100%!important;
+    width: 100%;
+}
+
 

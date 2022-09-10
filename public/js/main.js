@@ -24,7 +24,9 @@ form.addEventListener('submit', function (e) {
 })
 
 $('.input-file input[type=file]').on('change', function(){
-    $('.submit-btn').addClass('active')
+    // $('.submit-btn').addClass('active')
+    $('.submit-btn').removeAttr('disabled')
+
 });
 
 $('.submit-btn').click(function() {

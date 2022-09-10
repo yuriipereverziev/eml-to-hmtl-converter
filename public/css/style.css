@@ -81,7 +81,7 @@ h1 {
     position: absolute;
     content: '';
     left: 12px;
-    top: 50%;
+    top: 18px;
     transform: translateY(-50%);
     width: 20px;
     height: 18px;
@@ -99,9 +99,6 @@ h1 {
     height: 0;
 }
 
-.active {
-    border: 2px solid #1dbb17;
-}
 
 .field-top {
     text-align: center;
@@ -131,7 +128,27 @@ h1 {
 /*    background-color: #2E703A;*/
 /*}*/
 
-/*!* Disabled *!*/
-/*.input-file input[type=file]:disabled + span {*/
-/*    background-color: #eee;*/
-/*}*/
+/* Disabled */
+.submit-btn:disabled {
+    opacity: 0.5;
+}
+
+.submit-btn:disabled:hover {
+    transform: none;
+    cursor: default;
+}
+
+.input-file, .submit-btn {
+    transition: .4s;
+}
+
+.input-file:hover,
+.submit-btn:hover  {
+    transform: scale(1.05);
+    transition: .4s;
+}
+
+.active {
+
+}
+

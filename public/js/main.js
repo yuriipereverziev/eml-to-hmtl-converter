@@ -18,11 +18,12 @@ form.addEventListener('submit', function (e) {
             $('#email-to').html(data.to.text);
             $('#date').html(date);
             $('#content').html(data.html);
+
             // console.log(data)
-            console.log(data)
 
-
-
+            if (success){
+                $('.field-top').removeClass('hidden')
+            }
         },
         error: function error() {
             console.error("There was an error :(");
@@ -31,12 +32,5 @@ form.addEventListener('submit', function (e) {
 })
 
 $('.input-file input[type=file]').on('change', function(){
-    // $('.submit-btn').addClass('active')
     $('.submit-btn').removeAttr('disabled')
-
-});
-
-$('.submit-btn').click(function() {
-    $(this).removeClass('active')
-    $('.field-top').removeClass('hidden')
 });

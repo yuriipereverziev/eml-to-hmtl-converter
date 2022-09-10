@@ -9,11 +9,12 @@ form.addEventListener('submit', function (e) {
         contentType: false,
         processData: false,
         success: function success(data) {
-            $('#output').html(data.from.html);
-            $('#output1').html(data.to.html);
+            $('#output').html(data.from.value[0].address);
+            $('#output1').html(data.to.text);
             $('#output2').html(data.html);
             // console.log(data)
             console.log(data)
+            console.log(data.from.value[0].address)
 
 
         },

@@ -11,28 +11,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<h1>EML Converter</h1>
-<form class="form" action="/public" method="post" enctype="multipart/form-data">
+<div class="container">
+    <h1>EML Converter</h1>
+    <form class="form" action="/public" method="post" enctype="multipart/form-data">
+        <label class="input-file">
+            <input type="file" name="eml">
+            <span class="input-file-btn">Upload</span>
+        </label>
+        <button class="submit-btn" disabled="disabled">Convert</button>
+    </form>
 
-    <label class="input-file">
-        <input type="file" name="eml">
-        <span class="input-file-btn">Upload</span>
-    </label>
+    <div class="field-top hidden">Date:&nbsp;<div id="date"></div>
+    </div>
+    <div class="field-top hidden">From:&nbsp;<div id="email-from"></div>
+    </div>
+    <div class="field-top hidden">To:&nbsp;<div id="email-to"></div>
+    </div>
 
-    <button class="submit-btn" disabled="disabled">Convert</button>
-</form>
-
-
-<div class="field-top hidden">From:&nbsp;<div id="email-from"></div></div>
-<br>
-<div class="field-top hidden">To:&nbsp;<div id="email-to"></div></div>
-<br>
-<div class="field-top hidden">Date:&nbsp;<div id="date"></div></div>
-<br>
-<div id="content"></div>
+    <div id="content"></div>
+</div>
 
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

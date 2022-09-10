@@ -3,8 +3,6 @@ const form = document.querySelector('.form')
 form.addEventListener('submit', function (e) {
     e.preventDefault()
 
-    const options = {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-
     $.ajax({
         url: "/convert",
         type: "post",
@@ -12,14 +10,12 @@ form.addEventListener('submit', function (e) {
         contentType: false,
         processData: false,
         success: function success(data) {
-            const date = new Date(data.date).toLocaleDateString('en-EN', options)
-
             $('#email-from').html(data.from.value[0].address);
             $('#email-to').html(data.to.text);
-            $('#date').html(date);
+            $('#date').html(data.date.slice(0, 19).replace('T', ' '));
             $('#content').html(data.html);
 
-            // console.log(data)
+            console.log(data)
 
             if (success){
                 $('.field-top').removeClass('hidden')

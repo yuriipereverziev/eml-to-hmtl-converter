@@ -18,7 +18,7 @@ form.addEventListener('submit', function (e) {
             console.log(data)
 
             if (success){
-                $('.field-top').removeClass('hidden');
+                $('.checkbox-wrap').removeClass('hidden');
                 $('.submit-btn').attr('disabled', 'disabled')
             }
         },
@@ -27,6 +27,21 @@ form.addEventListener('submit', function (e) {
         }
     });
 })
+
+
+
+$('#checkbox').on('change', function(){
+    if(this.checked) {
+        $('.checkbox-label').text('hide details')
+        $('.content-wrap').addClass('active')
+    } else {
+        $('.checkbox-label').text('show details')
+        $('.content-wrap').removeClass('active')
+    }
+})
+
+
+
 
 $('.input-file input[type=file]').on('change', function(){
     $('.submit-btn').removeAttr('disabled')

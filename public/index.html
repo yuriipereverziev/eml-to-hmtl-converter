@@ -14,7 +14,9 @@
 <body>
 
 <div class="container">
+
     <h1>EML Converter</h1>
+
     <form class="form" action="/public" method="post" enctype="multipart/form-data">
         <label class="input-file">
             <input type="file" name="eml">
@@ -23,13 +25,15 @@
         <button class="submit-btn" disabled="disabled">Convert</button>
     </form>
 
-
-
-    <div class="field-top hidden">Date:&nbsp;<div id="date"></div>
+    <div class="checkbox-wrap hidden">
+        <input id="checkbox" type="checkbox">
+        <label class="checkbox-label" for="checkbox">show details</label>
     </div>
-    <div class="field-top hidden">From:&nbsp;<div id="email-from"></div>
-    </div>
-    <div class="field-top hidden">To:&nbsp;<div id="email-to"></div>
+
+    <div class="content-wrap">
+        <div class="field-top">Date:&nbsp;<div id="date"></div></div>
+        <div class="field-top">From:&nbsp;<div id="email-from"></div></div>
+        <div class="field-top">To:&nbsp;<div id="email-to"></div></div>
     </div>
 
     <div id="content"></div>

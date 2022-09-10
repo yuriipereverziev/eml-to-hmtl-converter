@@ -102,19 +102,11 @@ h1 {
 
 
 .field-top {
+    display: flex;
     text-align: center;
     color: #1F2E62;
+    font-size: 14px;
 }
-.field-top {
-    display: flex;
-    justify-content: center;
-}
-
-.hidden {
-    display: none;
-}
-
-
 
 /*!* Focus *!*/
 /*.input-file input[type=file]:focus + span {*/
@@ -149,7 +141,45 @@ h1 {
     transition: .4s;
 }
 
-.field-top {
+.field-top:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+#checkbox {
+    margin: 0;
+    margin-top: 1px;
+    margin-right: 5px;
+}
+
+.checkbox-label {
+    line-height: 1;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.content-wrap {
+    display: none;
     margin-bottom: 15px;
 }
+
+.content-wrap.active {
+    display: block;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.checkbox-wrap {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.checkbox-wrap.hidden {
+    display: none;
+}
+
 

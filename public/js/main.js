@@ -2,6 +2,9 @@ const form = document.querySelector('.form')
 
 form.addEventListener('submit', function (e) {
     e.preventDefault()
+
+    const options = {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+
     $.ajax({
         url: "/convert",
         type: "post",
@@ -9,12 +12,15 @@ form.addEventListener('submit', function (e) {
         contentType: false,
         processData: false,
         success: function success(data) {
-            $('#output').html(data.from.value[0].address);
-            $('#output1').html(data.to.text);
-            $('#output2').html(data.html);
+            const date = new Date(data.date).toLocaleDateString('en-EN', options)
+
+            $('#email-from').html(data.from.value[0].address);
+            $('#email-to').html(data.to.text);
+            $('#date').html(date);
+            $('#content').html(data.html);
             // console.log(data)
             console.log(data)
-            console.log(data.from.value[0].address)
+
 
 
         },

@@ -1,100 +1,98 @@
 const form = document.querySelector('.form')
-// const emailFrom = document.getElementById('email-from')
-// const emailTo = document.getElementById('email-to')
-// const date = document.getElementById('date')
-// const content = document.getElementById('content')
-// const checkbox = document.getElementById('checkbox')
-// const checkboxWrapper = document.querySelector('.checkbox-wrap')
-// const submit = document.querySelector('.submit-btn')
-// const file = document.querySelector('.input-file input[type=file]')
-// const checkboxLabel = document.querySelector('.checkbox-label')
-// const contentWrapper = document.querySelector('.content-wrap')
-
+const emailFrom = document.getElementById('email-from')
+const emailTo = document.getElementById('email-to')
+const date = document.getElementById('date')
+const content = document.getElementById('content')
+const checkbox = document.getElementById('checkbox')
+const checkboxWrapper = document.querySelector('.checkbox-wrap')
+const submit = document.querySelector('.submit-btn')
+const file = document.querySelector('.input-file input[type=file]')
+const checkboxLabel = document.querySelector('.checkbox-label')
+const contentWrapper = document.querySelector('.content-wrap')
 
 form.addEventListener('submit', function (e) {
     e.preventDefault()
+    const options = {method: 'post', body: new FormData(this)}
 
-    $.ajax({
-        url: "/convert",
-        type: "post",
-        data: new FormData(this),
-        contentType: false,
-        processData: false,
-        success: function success(data) {
-            $('#email-from').html(data.from.value[0].address);
-            $('#email-to').html(data.to.text);
-            $('#date').html(data.date.slice(0, 19).replace('T', ' '));
-            $('#content').html(data.html);
+    fetch('/convert', options)
 
-            console.log(data)
-
-            if (success){
-                $('.checkbox-wrap').removeClass('hidden');
-                $('.submit-btn').attr('disabled', 'disabled')
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
             }
-        },
-        error: function error() {
-            console.error("There was an error :(");
-        }
-    });
+            return Promise.reject(response);
+        })
+        .then((data) => {
+            // console.log(data)
+            emailFrom.textContent = data.from.value[0].address;
+            emailTo.textContent = data.to.text;
+            date.textContent = data.date.slice(0, 19).replace('T', ' ');
+            content.innerHTML = data.html;
+            checkboxWrapper.classList.remove('hidden');
+            submit.setAttribute("disabled", "disabled")
+        })
+        .catch((error) => {
+            console.log('Something went wrong.', error);
+        });
 })
 
+file.addEventListener('change', function () {
+    submit.removeAttribute('disabled')
+});
 
-
-$('#checkbox').on('change', function(){
-    if(this.checked) {
-        $('.checkbox-label').text('hide details')
-        $('.content-wrap').addClass('active')
+checkbox.addEventListener("change", function () {
+    if (this.checked) {
+        checkboxLabel.textContent = 'hide details';
+        contentWrapper.classList.add('active');
     } else {
-        $('.checkbox-label').text('show details')
-        $('.content-wrap').removeClass('active')
+        checkboxLabel.textContent = 'show details';
+        contentWrapper.classList.remove('active');
     }
 })
 
-
-
-
-$('.input-file input[type=file]').on('change', function(){
-    $('.submit-btn').removeAttr('disabled')
-});
-
-
+//
 // form.addEventListener('submit', function (e) {
 //     e.preventDefault()
-//     const options = {method: 'post', body: new FormData(this)}
 //
-//     fetch('/convert', options)
+//     $.ajax({
+//         url: "/convert",
+//         type: "post",
+//         data: new FormData(this),
+//         contentType: false,
+//         processData: false,
+//         success: function success(data) {
+//             $('#email-from').html(data.from.value[0].address);
+//             $('#email-to').html(data.to.text);
+//             $('#date').html(data.date.slice(0, 19).replace('T', ' '));
+//             $('#content').html(data.html);
 //
-//         .then((response) => {
-//             if (response.ok) {
-//                 return response.json();
+//             console.log(data)
+//
+//             if (success){
+//                 $('.checkbox-wrap').removeClass('hidden');
+//                 $('.submit-btn').attr('disabled', 'disabled')
 //             }
-//             return Promise.reject(response);
-//         })
-//         .then((data) => {
-//             // console.log(data)
-//             emailFrom.textContent = data.from.value[0].address;
-//             emailTo.textContent = data.to.text;
-//             date.textContent = data.date.slice(0, 19).replace('T', ' ');
-//             content.innerHTML = data.html;
-//             checkboxWrapper.classList.remove('hidden');
-//             submit.setAttribute("disabled", "disabled")
-//         })
-//         .catch((error) => {
-//             console.log('Something went wrong.', error);
-//         });
+//         },
+//         error: function error() {
+//             console.error("There was an error :(");
+//         }
+//     });
 // })
 //
-// file.addEventListener('change', function () {
-//     submit.removeAttribute('disabled')
-// });
 //
-// checkbox.addEventListener("change", function () {
-//     if (this.checked) {
-//         checkboxLabel.textContent = 'hide details';
-//         contentWrapper.classList.add('active');
+//
+// $('#checkbox').on('change', function(){
+//     if(this.checked) {
+//         $('.checkbox-label').text('hide details')
+//         $('.content-wrap').addClass('active')
 //     } else {
-//         checkboxLabel.textContent = 'show details';
-//         contentWrapper.classList.remove('active');
+//         $('.checkbox-label').text('show details')
+//         $('.content-wrap').removeClass('active')
 //     }
 // })
+//
+//
+// $('.input-file input[type=file]').on('change', function(){
+//     $('.submit-btn').removeAttr('disabled')
+// });
+//

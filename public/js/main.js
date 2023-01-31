@@ -14,7 +14,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault()
     const options = {method: 'post', body: new FormData(this)}
 
-    fetch('/', options)
+    fetch('/convert', options)
 
         .then((response) => {
             if (response.ok) {
@@ -23,7 +23,7 @@ form.addEventListener('submit', function (e) {
             return Promise.reject(response);
         })
         .then((data) => {
-            // console.log(data)
+            console.log(data)
             emailFrom.textContent = data.from.value[0].address;
             emailTo.textContent = data.to.text;
             date.textContent = data.date.slice(0, 19).replace('T', ' ');

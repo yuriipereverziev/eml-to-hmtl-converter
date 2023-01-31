@@ -14,7 +14,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault()
     const options = {method: 'post', body: new FormData(this)}
 
-    fetch('/convert', options)
+    fetch('/', options)
 
         .then((response) => {
             if (response.ok) {

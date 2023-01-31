@@ -32,7 +32,7 @@ app.get('/', function (request, response) {
     response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.post('/convert', (request, response) => {
+app.post('/', (request, response) => {
     upload(request, response, (err) => {
         if (err) {
             console.log(err)
